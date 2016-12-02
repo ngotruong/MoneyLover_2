@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08599B7A1DF12733003629F8 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08599B791DF12733003629F8 /* CategoryManager.swift */; };
 		08599B7C1DF12E60003629F8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08599B7B1DF12E60003629F8 /* CategoryModel.swift */; };
+		08599B7E1DF17E55003629F8 /* ListEditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08599B7D1DF17E55003629F8 /* ListEditCategoryViewController.swift */; };
 		08601B1B1DEEC692004EF0F3 /* ShowIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08601B1A1DEEC692004EF0F3 /* ShowIconViewController.swift */; };
 		08601B1D1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08601B1C1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift */; };
 		0890DCE71DE6C1AB007FD3B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890DCE61DE6C1AB007FD3B5 /* CoreDataManager.swift */; };
@@ -62,12 +63,19 @@
 		14DA31371DE4204D003D8390 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DA312A1DE41EF7003D8390 /* LaunchScreen.storyboard */; };
 		14DA31381DE42051003D8390 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DA312C1DE41EF7003D8390 /* Login.storyboard */; };
 		63B5A25958366B30C7FBC38B /* Pods_MoneyLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE78369883E11E8330BD0E1 /* Pods_MoneyLover.framework */; };
+		A81FB0461DF4025100D5BF24 /* SectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB0451DF4025100D5BF24 /* SectionsData.swift */; };
+		A81FB04A1DF4474600D5BF24 /* DataDetailCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB0491DF4474600D5BF24 /* DataDetailCategory.swift */; };
+		A81FB04C1DF4497D00D5BF24 /* DetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB04B1DF4497D00D5BF24 /* DetailCategoryViewController.swift */; };
+		A81FB04F1DF44D5B00D5BF24 /* NameCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB04E1DF44D5B00D5BF24 /* NameCategoryCell.swift */; };
+		A81FB0511DF44D8900D5BF24 /* TypeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB0501DF44D8900D5BF24 /* TypeCategoryCell.swift */; };
+		A81FB0531DF44DA700D5BF24 /* DeleteCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81FB0521DF44DA700D5BF24 /* DeleteCategoryCell.swift */; };
 		A83E6E1F1DEC7D260075D90E /* CustomUICorlor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E6E1E1DEC7D260075D90E /* CustomUICorlor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08599B791DF12733003629F8 /* CategoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		08599B7B1DF12E60003629F8 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		08599B7D1DF17E55003629F8 /* ListEditCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEditCategoryViewController.swift; sourceTree = "<group>"; };
 		08601B1A1DEEC692004EF0F3 /* ShowIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowIconViewController.swift; sourceTree = "<group>"; };
 		08601B1C1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseIconColectionViewCell.swift; sourceTree = "<group>"; };
 		0890DCE61DE6C1AB007FD3B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -126,6 +134,12 @@
 		14DA312D1DE41EF7003D8390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		21C2614A347F59FD0DBA8BFB /* Pods-MoneyLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyLover/Pods-MoneyLover.release.xcconfig"; sourceTree = "<group>"; };
 		8DDE7869D720B13C5232327D /* Pods-MoneyLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyLover/Pods-MoneyLover.debug.xcconfig"; sourceTree = "<group>"; };
+		A81FB0451DF4025100D5BF24 /* SectionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsData.swift; sourceTree = "<group>"; };
+		A81FB0491DF4474600D5BF24 /* DataDetailCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetailCategory.swift; sourceTree = "<group>"; };
+		A81FB04B1DF4497D00D5BF24 /* DetailCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCategoryViewController.swift; sourceTree = "<group>"; };
+		A81FB04E1DF44D5B00D5BF24 /* NameCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCategoryCell.swift; sourceTree = "<group>"; };
+		A81FB0501DF44D8900D5BF24 /* TypeCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCategoryCell.swift; sourceTree = "<group>"; };
+		A81FB0521DF44DA700D5BF24 /* DeleteCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCategoryCell.swift; sourceTree = "<group>"; };
 		A83E6E1E1DEC7D260075D90E /* CustomUICorlor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUICorlor.swift; sourceTree = "<group>"; };
 		CAE78369883E11E8330BD0E1 /* Pods_MoneyLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -213,6 +227,8 @@
 				149C11921DE744BA0067AAE7 /* ReportViewController.swift */,
 				145FAB2A1DF1109800D71E9B /* AccountTableViewController.swift */,
 				08601B1A1DEEC692004EF0F3 /* ShowIconViewController.swift */,
+				08599B7D1DF17E55003629F8 /* ListEditCategoryViewController.swift */,
+				A81FB04B1DF4497D00D5BF24 /* DetailCategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +246,8 @@
 				145FAB2E1DF1326100D71E9B /* StringConstant.swift */,
 				08599B791DF12733003629F8 /* CategoryManager.swift */,
 				08599B7B1DF12E60003629F8 /* CategoryModel.swift */,
+				A81FB0451DF4025100D5BF24 /* SectionsData.swift */,
+				A81FB0491DF4474600D5BF24 /* DataDetailCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				08F652821DED5780008A116D /* CellViewTransaction */,
+				A81FB04D1DF44D0E00D5BF24 /* CellViewDetailCategory */,
 				144FEF591DE6C88E0078BAB4 /* LoadingIndicatorView.swift */,
 				08F652A91DED9EB4008A116D /* ShowCategoryTableViewCell.swift */,
 				146D72741DED116500ED05F7 /* OverViewTableViewCell.swift */,
@@ -312,6 +331,16 @@
 				21C2614A347F59FD0DBA8BFB /* Pods-MoneyLover.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A81FB04D1DF44D0E00D5BF24 /* CellViewDetailCategory */ = {
+			isa = PBXGroup;
+			children = (
+				A81FB04E1DF44D5B00D5BF24 /* NameCategoryCell.swift */,
+				A81FB0501DF44D8900D5BF24 /* TypeCategoryCell.swift */,
+				A81FB0521DF44DA700D5BF24 /* DeleteCategoryCell.swift */,
+			);
+			path = CellViewDetailCategory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,18 +501,23 @@
 				1459356C1DE68A1D004BC748 /* CustomView.swift in Sources */,
 				1458386E1DE83BFA00FB269A /* AddNewTransactionViewController.swift in Sources */,
 				146D727A1DED194000ED05F7 /* TransactionTableViewCell.swift in Sources */,
+				A81FB0511DF44D8900D5BF24 /* TypeCategoryCell.swift in Sources */,
+				A81FB0531DF44DA700D5BF24 /* DeleteCategoryCell.swift in Sources */,
 				146D727D1DED197000ED05F7 /* HeaderTransactionSection.swift in Sources */,
 				146D72761DED116500ED05F7 /* OverViewTableViewCell.swift in Sources */,
 				0890DCEB1DE6C2BF007FD3B5 /* CheckValidateTextField.swift in Sources */,
 				08F652A01DED73B6008A116D /* ShowCategoryViewController.swift in Sources */,
 				08599B7C1DF12E60003629F8 /* CategoryModel.swift in Sources */,
 				08F652921DED585B008A116D /* LocationCell.swift in Sources */,
+				A81FB04C1DF4497D00D5BF24 /* DetailCategoryViewController.swift in Sources */,
 				0890DCE71DE6C1AB007FD3B5 /* CoreDataManager.swift in Sources */,
 				145FAB2B1DF1109800D71E9B /* AccountTableViewController.swift in Sources */,
 				1459357A1DE68A82004BC748 /* User+CoreDataProperties.swift in Sources */,
 				089491591DEBD3BA00619E11 /* AddTransactionViewController.swift in Sources */,
 				A83E6E1F1DEC7D260075D90E /* CustomUICorlor.swift in Sources */,
+				A81FB04F1DF44D5B00D5BF24 /* NameCategoryCell.swift in Sources */,
 				1459357C1DE68A82004BC748 /* Wallet+CoreDataProperties.swift in Sources */,
+				A81FB04A1DF4474600D5BF24 /* DataDetailCategory.swift in Sources */,
 				0890DCE91DE6C1ED007FD3B5 /* DataStored.swift in Sources */,
 				14DA31311DE41EF7003D8390 /* LoginViewController.swift in Sources */,
 				08F6528A1DED5780008A116D /* CategoryCell.swift in Sources */,
@@ -493,6 +527,7 @@
 				145935751DE68A82004BC748 /* Category+CoreDataClass.swift in Sources */,
 				145FAB291DF10F2700D71E9B /* DataViewAccount.swift in Sources */,
 				142D3F531DE58C40007E2C77 /* SplashScreen.swift in Sources */,
+				08599B7E1DF17E55003629F8 /* ListEditCategoryViewController.swift in Sources */,
 				089491631DEC28F800619E11 /* CustomDate.swift in Sources */,
 				08F652901DED583D008A116D /* WalletCell.swift in Sources */,
 				145935771DE68A82004BC748 /* Transaction+CoreDataClass.swift in Sources */,
@@ -509,6 +544,7 @@
 				145FAB2F1DF1326100D71E9B /* StringConstant.swift in Sources */,
 				145935761DE68A82004BC748 /* Category+CoreDataProperties.swift in Sources */,
 				08601B1D1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift in Sources */,
+				A81FB0461DF4025100D5BF24 /* SectionsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,5 +32,6 @@ class DataStored: NSObject {
             result = NSManagedObject(entity: entityDescription, insertIntoManagedObjectContext: managedObjectContext)
         }
         return result
+        
     }
 }

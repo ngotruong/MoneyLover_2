@@ -8,17 +8,42 @@
 
 import UIKit
 
+protocol SaveCategory: class {
+    func didSaveCategory(category: Category)
+}
+
 class AddCategoryViewController: UITableViewController {
     
     @IBOutlet weak var typeCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var inputNameTextField: UITextField!
     @IBOutlet weak var iconCategoryImageView: UIImageView!
-    var category = CategoryModel()
+    var nameIcon = ""
     var categoryManager = CategoryManager()
+    var category: Category?
+    weak var delegate: SaveCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New Category"
+        if let categories = category {
+            self.title = "Edit Category"
+            inputNameTextField?.text = categories.name
+            if categories.type == 0 {
+                if categories.name == "Repayment" || categories.name == "Loan" {
+                    typeCategorySegmentedControl?.selectedSegmentIndex = 1
+                } else {
+                    typeCategorySegmentedControl.selectedSegmentIndex = 0
+                }
+            } else if categories.type == 1 {
+                typeCategorySegmentedControl.selectedSegmentIndex = 1
+            } else {
+                typeCategorySegmentedControl.selectedSegmentIndex = 0
+            }
+            if let icon = categories.icon {
+                iconCategoryImageView?.image = UIImage(named: icon)
+            }
+        } else {
+            self.title = "New Category"
+        }
         let buttonSave = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: #selector(saveAction))
         let buttonCancel = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: #selector(cancelAction))
         navigationItem.rightBarButtonItem = buttonSave
@@ -26,6 +51,7 @@ class AddCategoryViewController: UITableViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(imageTapped))
         iconCategoryImageView?.userInteractionEnabled = true
         iconCategoryImageView?.addGestureRecognizer(tapGestureRecognizer)
+        self.navigationController?.navigationBar.tintColor = UIColor.greenColor()
     }
     
     func imageTapped() {
@@ -36,16 +62,34 @@ class AddCategoryViewController: UITableViewController {
     }
     
     @objc private func saveAction() {
-        if let nameCategory = self.inputNameTextField?.text, let typeCategory = self.typeCategorySegmentedControl?.selectedSegmentIndex {
-            category.nameCategory = nameCategory
-            category.typeCategory = typeCategory
-            if categoryManager.checkCategoryExisted(nameCategory) {
-                presentAlertWithTitle("Error", message: "Category was existed")
-            } else {
-                if categoryManager.addCategory(category) {
-                    presentAlertWithTitle("OK", message: "Completed add category")
+        if let categories = category {
+            if let nameCategory = self.inputNameTextField?.text, let typeCategory = self.typeCategorySegmentedControl?.selectedSegmentIndex {
+                if let idCategory = categories.idCategory as? Int {
+                    if nameIcon == "" {
+                        if let icon = categories.icon {
+                            nameIcon = icon
+                        }
+                    }
+                    let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategory, iconCategory: nameIcon, idCategory: idCategory)
+                    if let newCategory = categoryManager.updateCategory(category) {
+                        self.delegate?.didSaveCategory(newCategory)
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        presentAlertWithTitle("Error", message: "Can't update category.")
+                    }
+                }
+            }
+        } else {
+            if let nameCategory = self.inputNameTextField?.text, let typeCategory = self.typeCategorySegmentedControl?.selectedSegmentIndex {
+                let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategory, iconCategory: nameIcon, idCategory: 0)
+                if categoryManager.checkCategoryExisted(nameCategory) {
+                    presentAlertWithTitle("Error", message: "Category was existed")
                 } else {
-                    presentAlertWithTitle("Error", message: "Can't add category.")
+                    if categoryManager.addCategory(category) {
+                        presentAlertWithTitle("OK", message: "Completed add category")
+                    } else {
+                        presentAlertWithTitle("Error", message: "Can't add category.")
+                    }
                 }
             }
         }
@@ -58,7 +102,7 @@ class AddCategoryViewController: UITableViewController {
 
 extension AddCategoryViewController: ChooseIconDelegate {
     func didChooseIcon(nameIcon: String) {
-        category.iconCategory = nameIcon
+        self.nameIcon = nameIcon
         self.iconCategoryImageView?.image = UIImage(named: nameIcon)
     }
 }
