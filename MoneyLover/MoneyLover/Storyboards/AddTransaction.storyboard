@@ -202,6 +202,9 @@
                                     <segment title="Income"/>
                                 </segments>
                                 <color key="tintColor" red="0.043162681823635252" green="0.64842178165736042" blue="0.10396472498079459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="chooseTypeCategory:" destination="1h7-dd-0qg" eventType="valueChanged" id="r7B-xk-hDs"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-bp-nwD">
                                 <rect key="frame" x="0.0" y="66" width="375" height="601"/>
@@ -230,6 +233,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chooseTypeSegmentedControl" destination="ZDX-lM-zdp" id="0Rx-YB-H0Q"/>
                         <outlet property="tableView" destination="EoU-bp-nwD" id="TuA-84-0jR"/>
                     </connections>
                 </viewController>
@@ -342,6 +346,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAQ-Vf-gVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="869.60000000000002" y="-151.57421289355324"/>
+        </scene>
+        <!--List Edit Category View Controller-->
+        <scene sceneID="7hO-vY-Jyr">
+            <objects>
+                <viewController storyboardIdentifier="ListEditCategoryViewController" id="STI-kD-2nq" customClass="ListEditCategoryViewController" customModule="MoneyLover" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I7u-8X-BlI"/>
+                        <viewControllerLayoutGuide type="bottom" id="eLh-pU-CAr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qNV-67-0CS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6W0-Sa-xhD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eLh-pU-CAr" firstAttribute="top" secondItem="6W0-Sa-xhD" secondAttribute="bottom" id="Dau-ef-U3c"/>
+                            <constraint firstItem="6W0-Sa-xhD" firstAttribute="leading" secondItem="qNV-67-0CS" secondAttribute="leading" id="TL6-5v-jA5"/>
+                            <constraint firstItem="6W0-Sa-xhD" firstAttribute="top" secondItem="qNV-67-0CS" secondAttribute="top" id="WCW-as-Al4"/>
+                            <constraint firstAttribute="trailing" secondItem="6W0-Sa-xhD" secondAttribute="trailing" id="sdz-Bu-bJw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="6W0-Sa-xhD" id="m9v-pI-UXf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4Q-Hv-US7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.60000000000002" y="505.99700149925042"/>
         </scene>
         <!--Show Icon View Controller-->
         <scene sceneID="yU8-ki-pzz">

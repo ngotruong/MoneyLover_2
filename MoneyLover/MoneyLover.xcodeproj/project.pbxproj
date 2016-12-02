@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084471EA1DF4F91B00F80D46 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084471E91DF4F91B00F80D46 /* CategoryModel.swift */; };
 		08599B7A1DF12733003629F8 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08599B791DF12733003629F8 /* CategoryManager.swift */; };
-		08599B7C1DF12E60003629F8 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08599B7B1DF12E60003629F8 /* CategoryModel.swift */; };
+		08599B7E1DF17E55003629F8 /* ListEditCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08599B7D1DF17E55003629F8 /* ListEditCategoryViewController.swift */; };
 		08601B1B1DEEC692004EF0F3 /* ShowIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08601B1A1DEEC692004EF0F3 /* ShowIconViewController.swift */; };
 		08601B1D1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08601B1C1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift */; };
 		0890DCE71DE6C1AB007FD3B5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890DCE61DE6C1AB007FD3B5 /* CoreDataManager.swift */; };
@@ -66,8 +67,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		084471E91DF4F91B00F80D46 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		08599B791DF12733003629F8 /* CategoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
-		08599B7B1DF12E60003629F8 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		08599B7D1DF17E55003629F8 /* ListEditCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEditCategoryViewController.swift; sourceTree = "<group>"; };
 		08601B1A1DEEC692004EF0F3 /* ShowIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowIconViewController.swift; sourceTree = "<group>"; };
 		08601B1C1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseIconColectionViewCell.swift; sourceTree = "<group>"; };
 		0890DCE61DE6C1AB007FD3B5 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				149C11921DE744BA0067AAE7 /* ReportViewController.swift */,
 				145FAB2A1DF1109800D71E9B /* AccountTableViewController.swift */,
 				08601B1A1DEEC692004EF0F3 /* ShowIconViewController.swift */,
+				08599B7D1DF17E55003629F8 /* ListEditCategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,13 +226,13 @@
 				14DA31241DE41EF7003D8390 /* Coredata */,
 				142D3F521DE58C40007E2C77 /* SplashScreen.swift */,
 				0890DCE81DE6C1ED007FD3B5 /* DataStored.swift */,
+				084471E91DF4F91B00F80D46 /* CategoryModel.swift */,
 				0890DCE61DE6C1AB007FD3B5 /* CoreDataManager.swift */,
 				0890DCEC1DE6EF35007FD3B5 /* UserManager.swift */,
 				089491601DEC122600619E11 /* ViewAddTransaction.swift */,
 				145FAB281DF10F2700D71E9B /* DataViewAccount.swift */,
 				145FAB2E1DF1326100D71E9B /* StringConstant.swift */,
 				08599B791DF12733003629F8 /* CategoryManager.swift */,
-				08599B7B1DF12E60003629F8 /* CategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,7 +479,6 @@
 				146D72761DED116500ED05F7 /* OverViewTableViewCell.swift in Sources */,
 				0890DCEB1DE6C2BF007FD3B5 /* CheckValidateTextField.swift in Sources */,
 				08F652A01DED73B6008A116D /* ShowCategoryViewController.swift in Sources */,
-				08599B7C1DF12E60003629F8 /* CategoryModel.swift in Sources */,
 				08F652921DED585B008A116D /* LocationCell.swift in Sources */,
 				0890DCE71DE6C1AB007FD3B5 /* CoreDataManager.swift in Sources */,
 				145FAB2B1DF1109800D71E9B /* AccountTableViewController.swift in Sources */,
@@ -487,12 +489,14 @@
 				0890DCE91DE6C1ED007FD3B5 /* DataStored.swift in Sources */,
 				14DA31311DE41EF7003D8390 /* LoginViewController.swift in Sources */,
 				08F6528A1DED5780008A116D /* CategoryCell.swift in Sources */,
+				084471EA1DF4F91B00F80D46 /* CategoryModel.swift in Sources */,
 				143BD1021DE7399D00764D2F /* TransactionsViewController.swift in Sources */,
 				149C11931DE744BA0067AAE7 /* ReportViewController.swift in Sources */,
 				144FEF5A1DE6C88E0078BAB4 /* LoadingIndicatorView.swift in Sources */,
 				145935751DE68A82004BC748 /* Category+CoreDataClass.swift in Sources */,
 				145FAB291DF10F2700D71E9B /* DataViewAccount.swift in Sources */,
 				142D3F531DE58C40007E2C77 /* SplashScreen.swift in Sources */,
+				08599B7E1DF17E55003629F8 /* ListEditCategoryViewController.swift in Sources */,
 				089491631DEC28F800619E11 /* CustomDate.swift in Sources */,
 				08F652901DED583D008A116D /* WalletCell.swift in Sources */,
 				145935771DE68A82004BC748 /* Transaction+CoreDataClass.swift in Sources */,

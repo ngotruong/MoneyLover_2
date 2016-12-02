@@ -22,6 +22,7 @@ class AddTransactionViewController: UIViewController {
         let buttonCancel = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: #selector(cancelAction))
         navigationItem.rightBarButtonItem = buttonSave
         navigationItem.leftBarButtonItem = buttonCancel
+        self.navigationController?.navigationBar.tintColor = UIColor.greenColor()
     }
     
     @objc private func saveAction() {

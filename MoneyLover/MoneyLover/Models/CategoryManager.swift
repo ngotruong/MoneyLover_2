@@ -39,4 +39,40 @@ class CategoryManager: NSObject {
         }
         return false
     }
+    
+    func updateCategory(categoryModel: CategoryModel) -> Category? {
+        let listCategory = dataStored.fetchRecordsForEntity("Category", inManagedObjectContext: managedObjectContext)
+        for categories in listCategory {
+            if let category = categories as? Category {
+                if category.idCategory == categoryModel.idCategory {
+                    category.name = categoryModel.nameCategory
+                    category.type = categoryModel.typeCategory
+                    category.icon = categoryModel.iconCategory
+                    do {
+                        try managedObjectContext.save()
+                        return category
+                    } catch {
+                        return nil
+                    }
+                }
+            }
+        }
+        return nil
+    }
+    
+    func addCategoryAvailale(category: CategoryModel) -> Category? {
+        if let categories = dataStored.createRecordForEntity("Category", inManagedObjectContext: managedObjectContext) as? Category {
+            categories.icon = category.iconCategory
+            categories.name = category.nameCategory
+            categories.type = category.typeCategory
+            categories.idCategory = category.idCategory
+            do {
+                try managedObjectContext.save()
+                return categories
+            } catch let error {
+                print(error)
+            }
+        }
+        return nil
+    }
 }
