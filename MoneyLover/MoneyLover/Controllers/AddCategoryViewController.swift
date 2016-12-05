@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol SaveCategory: class {
-    func didSaveCategory(category: Category)
-}
-
 class AddCategoryViewController: UITableViewController {
     
     @IBOutlet weak var typeCategorySegmentedControl: UISegmentedControl!
@@ -20,7 +16,6 @@ class AddCategoryViewController: UITableViewController {
     var nameIcon = ""
     var category: Category?
     var categoryManager = CategoryManager()
-    weak var delegate: SaveCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,22 +58,7 @@ class AddCategoryViewController: UITableViewController {
     
     @objc private func saveAction() {
         if let categories = category {
-            if let nameCategory = self.inputNameTextField?.text, let typeCategory = self.typeCategorySegmentedControl?.selectedSegmentIndex {
-                if let idCategory = categories.idCategory as? Int {
-                    if nameIcon == "" {
-                        if let icon = categories.icon {
-                            nameIcon = icon
-                        }
-                    }
-                    let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategory, iconCategory: nameIcon, idCategory: idCategory)
-                    if let newCategory = categoryManager.updateCategory(category) {
-                        self.delegate?.didSaveCategory(newCategory)
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                    } else {
-                        presentAlertWithTitle("Error", message: "Can't update category.")
-                    }
-                }
-            }
+            //Edit
         } else {
             if let nameCategory = self.inputNameTextField?.text, let typeCategory = self.typeCategorySegmentedControl?.selectedSegmentIndex {
                 let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategory, iconCategory: nameIcon, idCategory: 0)

@@ -67,6 +67,8 @@ class ShowCategoryViewController: UIViewController {
     
     @objc private func editAction() {
         if let listEdit = self.storyboard?.instantiateViewControllerWithIdentifier("ListEditCategoryViewController") as? ListEditCategoryViewController {
+            let section = SectionsData()
+            listEdit.sectionData.appendContentsOf(section.getSectionsFromData(dictCategory))
             self.navigationController?.pushViewController(listEdit, animated: true)
         }
     }
