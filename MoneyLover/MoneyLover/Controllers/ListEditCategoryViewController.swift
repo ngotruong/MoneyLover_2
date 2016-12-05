@@ -70,7 +70,20 @@ extension ListEditCategoryViewController: UITableViewDelegate {
         if let detailCategory = self.storyboard?.instantiateViewControllerWithIdentifier("DetailCategoryViewController") as? DetailCategoryViewController {
             let category = sectionData[indexPath.section].listCategory[indexPath.row]
             detailCategory.category = category
+            detailCategory.delegate = self
+            detailCategory.indexPath = indexPath
             self.navigationController?.pushViewController(detailCategory, animated: true)
+        }
+    }
+}
+
+extension ListEditCategoryViewController: DeleteCategory {
+    func didDeleteCategory(indexPath: NSIndexPath?) {
+        if let indexPath = indexPath {
+            var abc = sectionData[indexPath.section].listCategory
+            abc.removeAtIndex(indexPath.row)
+            sectionData[indexPath.section].listCategory = abc
+            tableView?.reloadSections(NSIndexSet(index: indexPath.section), withRowAnimation: .None)
         }
     }
 }

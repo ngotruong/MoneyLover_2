@@ -10,16 +10,16 @@ import UIKit
 
 struct Section {
     var title = ""
-    var listCategory = [Category]()
+    var listCategory = [CategoryModel]()
     
-    init(title: String, listCategory: [Category]) {
+    init(title: String, listCategory: [CategoryModel]) {
         self.title = title
         self.listCategory = listCategory
     }
 }
 
 class SectionsData {
-    func getSectionsFromData(dictCategory: [Int: [Category]]) -> [Section] {
+    func getSectionsFromData(dictCategory: [Int: [CategoryModel]]) -> [Section] {
         var sectionsArray = [Section]()
         for (key, value) in dictCategory {
             if key == 0 {

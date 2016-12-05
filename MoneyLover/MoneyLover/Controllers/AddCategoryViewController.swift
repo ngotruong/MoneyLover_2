@@ -18,29 +18,27 @@ class AddCategoryViewController: UITableViewController {
     @IBOutlet weak var inputNameTextField: UITextField!
     @IBOutlet weak var iconCategoryImageView: UIImageView!
     var nameIcon = ""
-    var category: Category?
+    var category: CategoryModel?
     var categoryManager = CategoryManager()
     weak var delegate: SaveCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let categories = category {
+        if let category = category {
             self.title = "Edit Category"
-            inputNameTextField?.text = categories.name
-            if categories.type == 0 {
-                if categories.name == "Repayment" || categories.name == "Loan" {
+            inputNameTextField?.text = category.nameCategory
+            if category.typeCategory == 0 {
+                if category.nameCategory == "Repayment" || category.nameCategory == "Loan" {
                     typeCategorySegmentedControl?.selectedSegmentIndex = 1
                 } else {
                     typeCategorySegmentedControl.selectedSegmentIndex = 0
                 }
-            } else if categories.type == 1 {
+            } else if category.typeCategory == 1 {
                 typeCategorySegmentedControl.selectedSegmentIndex = 1
             } else {
                 typeCategorySegmentedControl.selectedSegmentIndex = 0
             }
-            if let icon = categories.icon {
-                iconCategoryImageView?.image = UIImage(named: icon)
-            }
+            iconCategoryImageView?.image = UIImage(named: category.iconCategory)
         } else {
             self.title = "New Category"
         }
@@ -62,37 +60,41 @@ class AddCategoryViewController: UITableViewController {
     }
     
     @objc private func saveAction() {
-        if let categories = category {
-            var typeCategories = 0
+        var typeCategories = 0
+        if let category = category {
             if let nameCategory = self.inputNameTextField?.text, let typeCategory = self.typeCategorySegmentedControl?.selectedSegmentIndex {
-                if let idCategory = categories.idCategory as? Int {
-                    if nameIcon == "" {
-                        if let icon = categories.icon {
-                            nameIcon = icon
-                        }
-                    }
-                    if typeCategory == 0 {
-                        typeCategories = 2
-                    } else {
-                        typeCategories = typeCategory
-                    }
-                    let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategories, iconCategory: nameIcon, idCategory: idCategory)
-                    if categoryManager.updateCategory(category) {
-                        self.delegate?.didSaveCategory(category)
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                    } else {
-                        presentAlertWithTitle("Error", message: "Can't update category.")
-                    }
+                if nameIcon == "" {
+                    nameIcon = category.iconCategory
+                }
+                if typeCategory == 0 {
+                    typeCategories = 2
+                } else {
+                    typeCategories = typeCategory
+                }
+                let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategories, iconCategory: nameIcon, idCategory: category.idCategory)
+                if categoryManager.updateCategory(category) {
+                    self.delegate?.didSaveCategory(category)
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    presentAlertWithTitle("Error", message: "Can't update category.")
                 }
             }
         } else {
             if let nameCategory = self.inputNameTextField?.text, let typeCategory = self.typeCategorySegmentedControl?.selectedSegmentIndex {
-                let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategory, iconCategory: nameIcon, idCategory: 0)
+                if typeCategory == 0 {
+                    typeCategories = 2
+                } else {
+                    typeCategories = typeCategory
+                }
+                let category = CategoryModel(nameCategory: nameCategory, typeCategory: typeCategories, iconCategory: nameIcon, idCategory: 0)
                 if categoryManager.checkCategoryExisted(nameCategory) {
                     presentAlertWithTitle("Error", message: "Category was existed")
                 } else {
-                    if categoryManager.addCategory(category) {
-                        presentAlertWithTitle("OK", message: "Completed add category")
+                    if let categoryModel = categoryManager.addCategory(category) {
+                        let listCategoryAvailable = ListCategoryAvailable()
+                        listCategoryAvailable.listCategory.append(categoryModel)
+                        self.delegate?.didSaveCategory(categoryModel)
+                        self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
                         presentAlertWithTitle("Error", message: "Can't add category.")
                     }

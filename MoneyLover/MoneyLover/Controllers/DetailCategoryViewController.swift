@@ -8,16 +8,22 @@
 
 import UIKit
 
+protocol DeleteCategory: class {
+    func didDeleteCategory(indexPath: NSIndexPath?)
+}
+
 class DetailCategoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var category: Category?
+    var category: CategoryModel?
     let listCell = ListCellViewDetailCategory()
     var categoryManager = CategoryManager()
+    weak var delegate: DeleteCategory?
+    var indexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if category?.type != 0 {
+        if category?.typeCategory != 0 {
             let buttonEdit = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: #selector(editAction))
             navigationItem.rightBarButtonItem = buttonEdit
         }
@@ -30,11 +36,6 @@ class DetailCategoryViewController: UIViewController {
             addCategory.category = category
             self.presentViewController(navController, animated:true, completion: nil)
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        print(category?.name)
     }
 }
 
@@ -52,13 +53,12 @@ extension DetailCategoryViewController: UITableViewDataSource {
     }
     
     private func configCell(cell: UITableViewCell) {
-        if let categories = category {
+        if let category = category {
             switch cell {
             case let cell as NameCategoryCell:
-                cell.configCellWithContent(categories)
-                
+                cell.configCellWithContent(category)
             case let cell as TypeCategoryCell:
-                cell.configCellWithContent(categories)
+                cell.configCellWithContent(category)
             default:
                 break
             }
@@ -70,7 +70,7 @@ extension DetailCategoryViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let dataCell = listCell.listCellViewDetailCategory[indexPath.row]
-        if category?.type == 0 {
+        if category?.typeCategory == 0 {
             if dataCell.cellIdentifier == "deleteCell" {
                 return 0.0
             }
@@ -80,15 +80,29 @@ extension DetailCategoryViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let viewDetailCategory = listCell.listCellViewDetailCategory[indexPath.row]
+        if viewDetailCategory.cellIdentifier == "deleteCell" {
+            if let idCategory = category?.idCategory {
+                if categoryManager.deleteCategory(idCategory) {
+                    self.delegate?.didDeleteCategory(self.indexPath)
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            }
+        }
     }
 }
 
 extension DetailCategoryViewController: SaveCategory {
     func didSaveCategory(category: CategoryModel) {
-        self.category?.name = category.nameCategory
-        self.category?.icon = category.iconCategory
-        self.category?.type = category.typeCategory
-        self.category?.idCategory = category.idCategory
+        self.category = category
+        let listCategoryAvailable = ListCategoryAvailable()
+        for categoryModel in listCategoryAvailable.listCategory {
+            if category.idCategory == categoryModel.idCategory {
+                categoryModel.iconCategory = category.iconCategory
+                categoryModel.nameCategory = category.nameCategory
+                categoryModel.typeCategory = category.typeCategory
+            }
+        }
         self.tableView?.reloadData()
     }
 }

@@ -14,14 +14,14 @@ class TypeCategoryCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configCellWithContent(category: Category) {
-        if category.type == 0 {
-            if category.name == "Repayment" || category.name == "Loan" {
+    func configCellWithContent(category: CategoryModel) {
+        if category.typeCategory == 0 {
+            if category.nameCategory == "Repayment" || category.nameCategory == "Loan" {
                 self.textLabel?.text = "Expense"
             } else {
                 self.textLabel?.text = "Income"
             }
-        } else if category.type == 1 {
+        } else if category.typeCategory == 1 {
             self.textLabel?.text = "Expense"
         } else {
             self.textLabel?.text = "Income"

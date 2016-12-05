@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0842C0BE1DF68E6500CD805A /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C0BC1DF68E6500CD805A /* NoteViewController.swift */; };
+		0842C0BF1DF68E6500CD805A /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C0BD1DF68E6500CD805A /* DateViewController.swift */; };
 		084471EA1DF4F91B00F80D46 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084471E91DF4F91B00F80D46 /* CategoryModel.swift */; };
 		084471EC1DF5035F00F80D46 /* SectionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084471EB1DF5035F00F80D46 /* SectionsData.swift */; };
 		084471EE1DF5036E00F80D46 /* DataDetailCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084471ED1DF5036E00F80D46 /* DataDetailCategory.swift */; };
@@ -72,6 +74,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0842C0BC1DF68E6500CD805A /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		0842C0BD1DF68E6500CD805A /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		084471E91DF4F91B00F80D46 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		084471EB1DF5035F00F80D46 /* SectionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsData.swift; sourceTree = "<group>"; };
 		084471ED1DF5036E00F80D46 /* DataDetailCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetailCategory.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				08601B1A1DEEC692004EF0F3 /* ShowIconViewController.swift */,
 				08599B7D1DF17E55003629F8 /* ListEditCategoryViewController.swift */,
 				084471EF1DF503C100F80D46 /* DetailCategoryViewController.swift */,
+				0842C0BC1DF68E6500CD805A /* NoteViewController.swift */,
+				0842C0BD1DF68E6500CD805A /* DateViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -524,6 +530,7 @@
 				145FAB291DF10F2700D71E9B /* DataViewAccount.swift in Sources */,
 				142D3F531DE58C40007E2C77 /* SplashScreen.swift in Sources */,
 				08599B7E1DF17E55003629F8 /* ListEditCategoryViewController.swift in Sources */,
+				0842C0BE1DF68E6500CD805A /* NoteViewController.swift in Sources */,
 				089491631DEC28F800619E11 /* CustomDate.swift in Sources */,
 				08F652901DED583D008A116D /* WalletCell.swift in Sources */,
 				145935771DE68A82004BC748 /* Transaction+CoreDataClass.swift in Sources */,
@@ -540,6 +547,7 @@
 				145FAB2F1DF1326100D71E9B /* StringConstant.swift in Sources */,
 				145935761DE68A82004BC748 /* Category+CoreDataProperties.swift in Sources */,
 				08601B1D1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift in Sources */,
+				0842C0BF1DF68E6500CD805A /* DateViewController.swift in Sources */,
 				084471EC1DF5035F00F80D46 /* SectionsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
