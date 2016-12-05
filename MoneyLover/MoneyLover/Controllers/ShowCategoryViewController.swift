@@ -117,3 +117,9 @@ extension ShowCategoryViewController: UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
+
+extension ShowCategoryViewController: SaveCategory {
+    func didSaveCategory(category: CategoryModel) {
+        self.tableView?.reloadData()
+    }
+}

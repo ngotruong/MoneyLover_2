@@ -17,16 +17,24 @@ class DetailCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let buttonEdit = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: #selector(editAction))
-        navigationItem.rightBarButtonItem = buttonEdit
+        if category?.type != 0 {
+            let buttonEdit = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: #selector(editAction))
+            navigationItem.rightBarButtonItem = buttonEdit
+        }
     }
     
     @objc private func editAction() {
         if let addCategory = self.storyboard?.instantiateViewControllerWithIdentifier("AddCategoryViewController") as? AddCategoryViewController {
             let navController = UINavigationController(rootViewController: addCategory)
+            addCategory.delegate = self
             addCategory.category = category
             self.presentViewController(navController, animated:true, completion: nil)
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        print(category?.name)
     }
 }
 
@@ -62,10 +70,25 @@ extension DetailCategoryViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let dataCell = listCell.listCellViewDetailCategory[indexPath.row]
+        if category?.type == 0 {
+            if dataCell.cellIdentifier == "deleteCell" {
+                return 0.0
+            }
+        }
         return dataCell.heighForCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
+
+extension DetailCategoryViewController: SaveCategory {
+    func didSaveCategory(category: CategoryModel) {
+        self.category?.name = category.nameCategory
+        self.category?.icon = category.iconCategory
+        self.category?.type = category.typeCategory
+        self.category?.idCategory = category.idCategory
+        self.tableView?.reloadData()
     }
 }

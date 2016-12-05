@@ -48,6 +48,26 @@ class CategoryManager: NSObject {
         return false
     }
     
+    func updateCategory(categoryModel: CategoryModel) -> Bool {
+        let listCategory = dataStored.fetchRecordsForEntity("Category", inManagedObjectContext: managedObjectContext)
+        for categories in listCategory {
+            if let category = categories as? Category {
+                if category.idCategory == categoryModel.idCategory {
+                    category.name = categoryModel.nameCategory
+                    category.type = categoryModel.typeCategory
+                    category.icon = categoryModel.iconCategory
+                    do {
+                        try managedObjectContext.save()
+                        return true
+                    } catch {
+                        return false
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
     func addCategoryAvailale(category: CategoryModel) -> Category? {
         if let categories = dataStored.createRecordForEntity("Category", inManagedObjectContext: managedObjectContext) as? Category {
             categories.icon = category.iconCategory
