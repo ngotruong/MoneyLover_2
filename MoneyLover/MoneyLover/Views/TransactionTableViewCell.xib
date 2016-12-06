@@ -9,7 +9,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="documents saved in the Xcode 7 format" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5786400" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFu-Ef-gY8">
@@ -41,17 +41,9 @@
                             <constraint firstAttribute="height" constant="35" id="YMS-Nh-Iho"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vịt vân Mỹ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gx-Sj-nOo">
-                        <rect key="frame" x="65" y="27.5" width="50.5" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8gx-Sj-nOo" firstAttribute="top" secondItem="Crp-io-OTX" secondAttribute="bottom" constant="2" id="72y-t1-sSZ"/>
                     <constraint firstItem="Crp-io-OTX" firstAttribute="leading" secondItem="ArR-AJ-Fsd" secondAttribute="trailing" constant="10" id="INh-Uc-m1L"/>
-                    <constraint firstItem="8gx-Sj-nOo" firstAttribute="leading" secondItem="ArR-AJ-Fsd" secondAttribute="trailing" constant="22" id="SVX-zo-Sa7"/>
                     <constraint firstItem="ArR-AJ-Fsd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="T9e-jP-Fqa"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xFu-Ef-gY8" secondAttribute="trailing" id="TH4-yq-Rml"/>
                     <constraint firstItem="Crp-io-OTX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="bWb-fa-dKn"/>
@@ -61,7 +53,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="iconCategoryImageView" destination="ArR-AJ-Fsd" id="8Fs-wc-FoE"/>
                 <outlet property="moneyLabel" destination="xFu-Ef-gY8" id="XkO-ak-5Bm"/>
+                <outlet property="nameCategoryLabel" destination="Crp-io-OTX" id="BKW-J0-sEL"/>
             </connections>
             <point key="canvasLocation" x="-94" y="-34"/>
         </tableViewCell>

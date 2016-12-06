@@ -49,11 +49,9 @@ class RegisterViewController: UIViewController {
         if let email = emailTextField?.text, let password = passwordTextField?.text {
             if checkTextFields(email, password: password) {
                 if userManager.checkUserLogin(email, password: password) {
-                    let storyBoard: UIStoryboard? = UIStoryboard(name: "AddTransaction", bundle: nil)
-                    if let addTransaction = storyBoard?.instantiateViewControllerWithIdentifier("AddTransactionViewController") as? AddTransactionViewController {
-                        let navController = UINavigationController(rootViewController: addTransaction)
-                        LoadingIndicatorView.hide()
-                        self.presentViewController(navController, animated:true, completion: nil)
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let home = mainStoryboard.instantiateViewControllerWithIdentifier("TabbarController") as? UITabBarController {
+                        self.presentViewController(home, animated: true, completion: nil)
                     }
                 } else {
                     presentAlertWithTitle("Error", message: "Username or password not match")

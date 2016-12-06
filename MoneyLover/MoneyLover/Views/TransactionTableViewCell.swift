@@ -10,8 +10,10 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var nameCategoryLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
-
+    @IBOutlet weak var iconCategoryImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

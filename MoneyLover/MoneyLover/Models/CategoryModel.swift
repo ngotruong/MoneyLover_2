@@ -20,6 +20,10 @@ class CategoryModel: NSObject {
     var iconCategory = ""
     var idCategory = 0
     
+    override init() {
+        super.init()
+    }
+    
     init(nameCategory: String, typeCategory: Int, iconCategory: String, idCategory: Int) {
         self.nameCategory = nameCategory
         self.typeCategory = typeCategory

@@ -26,6 +26,7 @@ class ListEditCategoryViewController: UIViewController {
     @objc private func addAction() {
         if let addCategory = self.storyboard?.instantiateViewControllerWithIdentifier("AddCategoryViewController") as? AddCategoryViewController {
             let navController = UINavigationController(rootViewController: addCategory)
+//            addCategory.delegate = self
             self.presentViewController(navController, animated:true, completion: nil)
         }
     }
@@ -76,6 +77,17 @@ extension ListEditCategoryViewController: UITableViewDelegate {
         }
     }
 }
+
+//extension ListEditCategoryViewController: SaveCategoryDelegate {
+////    func didSaveCategory(category: CategoryModel) {
+////        for section in sectionData {
+////            if section.title == "EXPENSE" && category.typeCategory == 1 {
+////                sectionData[0].
+////            }
+////        }
+////        self.tableView?.reloadData()
+////    }
+//}
 
 extension ListEditCategoryViewController: DeleteCategoryDelegate {
     func didDeleteCategory(indexPath: NSIndexPath?) {

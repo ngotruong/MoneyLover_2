@@ -53,7 +53,7 @@ class AccountTableViewController: UITableViewController {
     
     private func showCategoryViewController() {
         let mainStoryboard = UIStoryboard(name: "AddTransaction", bundle: nil)
-        if let addTransactionVC = mainStoryboard.instantiateViewControllerWithIdentifier("AddTransactionViewController") as? AddTransactionViewController {
+        if let addTransactionVC = mainStoryboard.instantiateViewControllerWithIdentifier("ShowCategoryViewController") as? ShowCategoryViewController {
             self.navigationController?.pushViewController(addTransactionVC, animated: true)
         }
     }

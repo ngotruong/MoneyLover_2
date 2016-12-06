@@ -74,12 +74,19 @@ extension DetailCategoryViewController: UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let viewDetailCategory = listCell.listCellViewDetailCategory[indexPath.row]
         if viewDetailCategory.cellIdentifier == "deleteCell" {
-            if let idCategory = category?.idCategory {
-                if categoryManager.deleteCategory(idCategory) {
-                    self.delegate?.didDeleteCategory(self.indexPath)
-                    self.navigationController?.popViewControllerAnimated(true)
+            let alertController = UIAlertController(title: NSLocalizedString("DeleteTitle", comment: ""), message: NSLocalizedString("MessageDeleteTransaction", comment: ""), preferredStyle: .Alert)
+            let logoutAction = UIAlertAction(title: NSLocalizedString("ButtonConfirmDelete", comment: ""), style: .Default) { (logoutaction) in
+                if let idCategory = self.category?.idCategory {
+                    if self.categoryManager.deleteCategory(idCategory) {
+                        self.delegate?.didDeleteCategory(self.indexPath)
+                        self.navigationController?.popViewControllerAnimated(true)
+                    }
                 }
             }
+            alertController.addAction(logoutAction)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("ButtonTitleCancel", comment: ""), style: .Default, handler: nil)
+            alertController.addAction(cancelAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 }

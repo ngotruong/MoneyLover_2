@@ -25,3 +25,6 @@ MessageAlertChangePasswordSuccess = "Thay đổi mật khẩu thành công. Bạ
 MessageAlertNameWalletExits = "Tên ví đã tồn tại";
 MessageAlertErrorAddWallet = "Không thể thêm mới dữ liệu";
 HeaderTitleChooseWallet = "TÍNH VÀO TỔNG";
+DeleteTitle = "Cảnh báo";
+MessageDeleteTransaction = "Bạn có chắc muốn xoá không ?";
+ButtonConfirmDelete = "Xoá";

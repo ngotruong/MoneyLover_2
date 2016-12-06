@@ -9,12 +9,34 @@
 import UIKit
 
 class ReportViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var endBalanceLabel: UILabel!
+    @IBOutlet weak var openBalanceLabel: UILabel!
+    var transactionManager = TransactionManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        var typeCategories = 0
+        var openBalance = 0.0
+        var endingBalance = 0.0
+        for transaction in transactionManager.showTransaction() {
+            typeCategories = (transaction.categoryWithTransaction?.getTypeInt())!
+            if typeCategories == 1 {
+                if let amount = transaction.amount {
+                    endingBalance = endingBalance - amount.doubleValue
+                }
+            } else {
+                if let amount = transaction.amount {
+                    openBalance = openBalance + amount.doubleValue
+                }
+            }
+        }
+        endBalanceLabel?.text = "\(endingBalance)"
+        openBalanceLabel?.text = "\(openBalance)"
     }
 }

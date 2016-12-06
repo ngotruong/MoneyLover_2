@@ -26,6 +26,7 @@
 		089491591DEBD3BA00619E11 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089491581DEBD3BA00619E11 /* AddTransactionViewController.swift */; };
 		089491611DEC122600619E11 /* ViewAddTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089491601DEC122600619E11 /* ViewAddTransaction.swift */; };
 		089491631DEC28F800619E11 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089491621DEC28F800619E11 /* CustomDate.swift */; };
+		08D9938B1DF7AFCA00F7515C /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D9938A1DF7AFCA00F7515C /* DetailTransactionViewController.swift */; };
 		08F652891DED5780008A116D /* AmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F652851DED5780008A116D /* AmountCell.swift */; };
 		08F6528A1DED5780008A116D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F652861DED5780008A116D /* CategoryCell.swift */; };
 		08F6528C1DED57FD008A116D /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F6528B1DED57FD008A116D /* NoteCell.swift */; };
@@ -76,6 +77,10 @@
 		14DA31381DE42051003D8390 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DA312C1DE41EF7003D8390 /* Login.storyboard */; };
 		63B5A25958366B30C7FBC38B /* Pods_MoneyLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE78369883E11E8330BD0E1 /* Pods_MoneyLover.framework */; };
 		A83E6E1F1DEC7D260075D90E /* CustomUICorlor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E6E1E1DEC7D260075D90E /* CustomUICorlor.swift */; };
+		A84B7FAC1DF6DBCC00D6B401 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84B7FAA1DF6DBCC00D6B401 /* NoteViewController.swift */; };
+		A84B7FAD1DF6DBCC00D6B401 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84B7FAB1DF6DBCC00D6B401 /* DateViewController.swift */; };
+		A84B7FAF1DF7065700D6B401 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84B7FAE1DF7065700D6B401 /* TransactionModel.swift */; };
+		A84B7FB11DF70DB900D6B401 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84B7FB01DF70DB900D6B401 /* TransactionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +103,7 @@
 		089491581DEBD3BA00619E11 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		089491601DEC122600619E11 /* ViewAddTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAddTransaction.swift; sourceTree = "<group>"; };
 		089491621DEC28F800619E11 /* CustomDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDate.swift; sourceTree = "<group>"; };
+		08D9938A1DF7AFCA00F7515C /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 		08F652851DED5780008A116D /* AmountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountCell.swift; sourceTree = "<group>"; };
 		08F652861DED5780008A116D /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		08F6528B1DED57FD008A116D /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
@@ -158,6 +164,10 @@
 		21C2614A347F59FD0DBA8BFB /* Pods-MoneyLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyLover/Pods-MoneyLover.release.xcconfig"; sourceTree = "<group>"; };
 		8DDE7869D720B13C5232327D /* Pods-MoneyLover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyLover.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyLover/Pods-MoneyLover.debug.xcconfig"; sourceTree = "<group>"; };
 		A83E6E1E1DEC7D260075D90E /* CustomUICorlor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUICorlor.swift; sourceTree = "<group>"; };
+		A84B7FAA1DF6DBCC00D6B401 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		A84B7FAB1DF6DBCC00D6B401 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		A84B7FAE1DF7065700D6B401 /* TransactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		A84B7FB01DF70DB900D6B401 /* TransactionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
 		CAE78369883E11E8330BD0E1 /* Pods_MoneyLover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyLover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -258,6 +268,9 @@
 				1418E79E1DF56A3500B0300C /* AddWalletTableViewController.swift */,
 				1418E7A61DF56D6A00B0300C /* AccountTableViewController.swift */,
 				084471EF1DF503C100F80D46 /* DetailCategoryViewController.swift */,
+				A84B7FAA1DF6DBCC00D6B401 /* NoteViewController.swift */,
+				A84B7FAB1DF6DBCC00D6B401 /* DateViewController.swift */,
+				08D9938A1DF7AFCA00F7515C /* DetailTransactionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +293,8 @@
 				084471EB1DF5035F00F80D46 /* SectionsData.swift */,
 				084471ED1DF5036E00F80D46 /* DataDetailCategory.swift */,
 				0842C0BA1DF665B200CD805A /* ConfigCell.swift */,
+				A84B7FAE1DF7065700D6B401 /* TransactionModel.swift */,
+				A84B7FB01DF70DB900D6B401 /* TransactionManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,7 +417,6 @@
 				TargetAttributes = {
 					14DA31051DE41B9D003D8390 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 5K84G7UAYU;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -526,6 +540,7 @@
 				145935781DE68A82004BC748 /* Transaction+CoreDataProperties.swift in Sources */,
 				08601B1B1DEEC692004EF0F3 /* ShowIconViewController.swift in Sources */,
 				1459356C1DE68A1D004BC748 /* CustomView.swift in Sources */,
+				A84B7FAC1DF6DBCC00D6B401 /* NoteViewController.swift in Sources */,
 				1458386E1DE83BFA00FB269A /* AddNewTransactionViewController.swift in Sources */,
 				146D727A1DED194000ED05F7 /* TransactionTableViewCell.swift in Sources */,
 				146301DA1DF58AFA00237775 /* WalletModel.swift in Sources */,
@@ -547,6 +562,7 @@
 				0890DCE91DE6C1ED007FD3B5 /* DataStored.swift in Sources */,
 				084471EE1DF5036E00F80D46 /* DataDetailCategory.swift in Sources */,
 				14DA31311DE41EF7003D8390 /* LoginViewController.swift in Sources */,
+				08D9938B1DF7AFCA00F7515C /* DetailTransactionViewController.swift in Sources */,
 				08F6528A1DED5780008A116D /* CategoryCell.swift in Sources */,
 				084471EA1DF4F91B00F80D46 /* CategoryModel.swift in Sources */,
 				143BD1021DE7399D00764D2F /* TransactionsViewController.swift in Sources */,
@@ -557,6 +573,7 @@
 				145FAB291DF10F2700D71E9B /* DataViewAccount.swift in Sources */,
 				142D3F531DE58C40007E2C77 /* SplashScreen.swift in Sources */,
 				08599B7E1DF17E55003629F8 /* ListEditCategoryViewController.swift in Sources */,
+				A84B7FAD1DF6DBCC00D6B401 /* DateViewController.swift in Sources */,
 				089491631DEC28F800619E11 /* CustomDate.swift in Sources */,
 				08F652901DED583D008A116D /* WalletCell.swift in Sources */,
 				145935771DE68A82004BC748 /* Transaction+CoreDataClass.swift in Sources */,
@@ -574,7 +591,9 @@
 				142B306E1DF5F06100BBBEA6 /* WalletTableViewCell.swift in Sources */,
 				145935761DE68A82004BC748 /* Category+CoreDataProperties.swift in Sources */,
 				1418E79F1DF56A3500B0300C /* AddWalletTableViewController.swift in Sources */,
+				A84B7FB11DF70DB900D6B401 /* TransactionManager.swift in Sources */,
 				08601B1D1DEED0D8004EF0F3 /* ChooseIconColectionViewCell.swift in Sources */,
+				A84B7FAF1DF7065700D6B401 /* TransactionModel.swift in Sources */,
 				084471EC1DF5035F00F80D46 /* SectionsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -710,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -727,9 +746,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MoneyLover/MoneyLover.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5K84G7UAYU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MoneyLover/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Framgia.MoneyLover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -747,9 +766,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MoneyLover/MoneyLover.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5K84G7UAYU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MoneyLover/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Framgia.MoneyLover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
